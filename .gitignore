@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Compiled class file
 *.class
 
@@ -21,3 +22,29 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+.DS_Store
+.idea/shelf
+*.iml
+/dependencies/all
+dist
+kotlin-native-*.tar.gz
+kotlin-native-*.zip
+translator/src/test/kotlin/tests/*/linked
+out
+tmp
+workspace.xml
+*.versionsBackup
+
+local.properties
+.gradle
+build
+
+# local project files
+lib/
+.idea/
+
+peformance/build
+
+# bot properties
+properties.json

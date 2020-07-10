@@ -14,7 +14,7 @@ Many features composes this bot:
 * Add or remove member as bot administrator.
 
 ## Example
-![](https://i.imgur.com/1KuJEPq.gif)
+![](assets/discord-bot-example1.gif)
 
 
 ## Installation

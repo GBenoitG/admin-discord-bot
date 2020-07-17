@@ -1,4 +1,4 @@
-package utils.properties
+package com.bendev.discordbot.utils.properties
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

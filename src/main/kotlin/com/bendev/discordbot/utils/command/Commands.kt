@@ -1,7 +1,7 @@
-package utils.command
+package com.bendev.discordbot.utils.command
 
+import com.bendev.discordbot.utils.properties.PropertiesManager
 import org.jetbrains.annotations.NotNull
-import utils.properties.PropertiesManager
 import kotlin.reflect.KClass
 
 object Commands {

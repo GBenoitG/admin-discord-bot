@@ -1,8 +1,9 @@
-
-import listener.MessageListener
-import listener.PrivateMessageListener
-import listener.ReactionListener
-import utils.properties.PropertiesManager
+package com.bendev.discordbot
+import com.bendev.discordbot.listener.MessageListener
+import com.bendev.discordbot.listener.PrivateMessageListener
+import com.bendev.discordbot.listener.ReactionListener
+import com.bendev.discordbot.utils.Constant
+import com.bendev.discordbot.utils.properties.PropertiesManager
 import net.dv8tion.jda.api.JDABuilder
 import net.dv8tion.jda.api.requests.GatewayIntent
 import java.io.IOException

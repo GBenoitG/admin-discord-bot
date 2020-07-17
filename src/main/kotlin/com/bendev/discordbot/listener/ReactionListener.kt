@@ -1,11 +1,11 @@
-package listener
+package com.bendev.discordbot.listener
 
+import com.bendev.discordbot.utils.command.CommandMessage
+import com.bendev.discordbot.utils.command.PermissionContent
 import net.dv8tion.jda.api.events.message.react.GenericMessageReactionEvent
 import net.dv8tion.jda.api.events.message.react.MessageReactionAddEvent
 import net.dv8tion.jda.api.events.message.react.MessageReactionRemoveEvent
 import net.dv8tion.jda.api.hooks.ListenerAdapter
-import utils.command.CommandMessage
-import utils.command.PermissionContent
 
 class ReactionListener : ListenerAdapter() {
 

@@ -13,22 +13,10 @@ import javax.security.auth.login.LoginException
 
 class Bot {
 
-    companion object {
-
-        @Throws(LoginException::class, IOException::class)
-        @JvmStatic
-        fun main(args: Array<String>) {
-
-            Bot().init()
-
-        }
-
-    }
-
     @Throws(LoginException::class, IOException::class)
     fun init() {
 
-        PropertiesManager.loadPropertiesFromFile("properties.json")
+        PropertiesManager.loadPropertiesFromFile(Constant.PROPERTIES_FILE_PATH)
 
         JDABuilder
                 .create(
@@ -45,5 +33,19 @@ class Bot {
                 ).build()
 
     }
+
+}
+
+@Throws(LoginException::class, IOException::class)
+fun main(args: Array<String>) {
+
+    if (args.isNotEmpty()) {
+        when (args[0]) {
+            "init" -> PropertiesManager.initFile(Constant.PROPERTIES_FILE_PATH)
+        }
+        return
+    }
+
+    Bot().init()
 
 }

@@ -36,7 +36,7 @@ docker build -t discord-bot .
 ```shell script
 docker run --rm -v $(pwd):/home/gradle/src admin-bot run --args="init"
 ```
-Edit the `properties.json` file freshly created ([seen here](#properties)) with your Discord Api Key then your discord 
+Edit the freshly created `properties.json` file ([seen here](#properties)) with your Discord Api Key, then your discord 
 administrator, and what ever you need to edit.
 
 **Run**

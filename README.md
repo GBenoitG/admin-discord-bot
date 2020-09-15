@@ -18,8 +18,6 @@ Many features composes this bot:
 
 
 ## Installation
-_Coming soon_
-
 **Build**
 
 Get sources

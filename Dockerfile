@@ -1,11 +1,11 @@
-FROM openjdk:8-jdk-alpine
+FROM gradle:6.6.1-jdk8
 
 # copy local dir to app/
-COPY . /app
-WORKDIR app
+COPY --chown=gradle:gradle . /home/gradle/src
+WORKDIR /home/gradle/src
 
-# build project with gradlew
-RUN ./gradlew assembleDist
-RUN ./gradlew run --args="init"
+USER gradle
 
-CMD ./gradlew run
+RUN gradle build --no-daemon
+
+ENTRYPOINT ["gradle"]

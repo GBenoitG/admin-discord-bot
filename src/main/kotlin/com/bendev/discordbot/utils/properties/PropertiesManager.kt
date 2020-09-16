@@ -1,4 +1,4 @@
-package utils.properties
+package com.bendev.discordbot.utils.properties
 
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
@@ -17,11 +17,7 @@ object PropertiesManager {
     @Synchronized
     fun loadPropertiesFromFile(propertiesFilePath: String) {
 
-        if (propertiesFilePath.isEmpty()) throw Exception("You must provide a correct properties file path")
-
-        val file = File(propertiesFilePath)
-
-        if (!file.exists()) createPropertiesFile(file)
+        val file = initFile(propertiesFilePath)
         if (file.readBytes().toString(Charsets.UTF_8).isEmpty()) initPropertiesFile(file)
 
         file.inputStream().use {
@@ -70,6 +66,17 @@ object PropertiesManager {
 
         return adminUsers.any { it == user.id }
 
+    }
+
+    fun initFile(propertiesFilePath: String): File {
+
+        if (propertiesFilePath.isEmpty()) throw Exception("You must provide a correct properties file path")
+
+        val file = File(propertiesFilePath)
+
+        if (!file.exists()) createPropertiesFile(file)
+
+        return file
     }
 
 }

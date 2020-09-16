@@ -1,4 +1,4 @@
-package utils.command
+package com.bendev.discordbot.utils.command
 
 import net.dv8tion.jda.api.entities.Member
 

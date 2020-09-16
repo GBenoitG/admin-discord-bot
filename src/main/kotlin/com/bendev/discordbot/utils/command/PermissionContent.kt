@@ -1,4 +1,4 @@
-package utils.command
+package com.bendev.discordbot.utils.command
 
 class PermissionContent(rawContent: String) : CommandContent(rawContent) {
 

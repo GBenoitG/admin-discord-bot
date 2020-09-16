@@ -1,7 +1,7 @@
-package utils.command
+package com.bendev.discordbot.utils.command
 
+import com.bendev.discordbot.utils.properties.PropertiesManager
 import net.dv8tion.jda.api.entities.Message
-import utils.properties.PropertiesManager
 
 open class CommandMessage(
         val commandName: Commands.CommandName,

@@ -1,8 +1,9 @@
-
-import listener.MessageListener
-import listener.PrivateMessageListener
-import listener.ReactionListener
-import utils.properties.PropertiesManager
+package com.bendev.discordbot
+import com.bendev.discordbot.listener.MessageListener
+import com.bendev.discordbot.listener.PrivateMessageListener
+import com.bendev.discordbot.listener.ReactionListener
+import com.bendev.discordbot.utils.Constant
+import com.bendev.discordbot.utils.properties.PropertiesManager
 import net.dv8tion.jda.api.JDABuilder
 import net.dv8tion.jda.api.requests.GatewayIntent
 import java.io.IOException
@@ -12,22 +13,10 @@ import javax.security.auth.login.LoginException
 
 class Bot {
 
-    companion object {
-
-        @Throws(LoginException::class, IOException::class)
-        @JvmStatic
-        fun main(args: Array<String>) {
-
-            Bot().init()
-
-        }
-
-    }
-
     @Throws(LoginException::class, IOException::class)
     fun init() {
 
-        PropertiesManager.loadPropertiesFromFile("properties.json")
+        PropertiesManager.loadPropertiesFromFile(Constant.PROPERTIES_FILE_PATH)
 
         JDABuilder
                 .create(
@@ -44,5 +33,19 @@ class Bot {
                 ).build()
 
     }
+
+}
+
+@Throws(LoginException::class, IOException::class)
+fun main(args: Array<String>) {
+
+    if (args.isNotEmpty()) {
+        when (args[0]) {
+            "init" -> PropertiesManager.initFile(Constant.PROPERTIES_FILE_PATH)
+        }
+        return
+    }
+
+    Bot().init()
 
 }

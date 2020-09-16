@@ -1,15 +1,13 @@
-package listener
+package com.bendev.discordbot.listener
 
-import utils.command.PermissionContent
-import net.dv8tion.jda.api.entities.*
+import com.bendev.discordbot.utils.command.CommandMessage
+import com.bendev.discordbot.utils.command.Commands
+import com.bendev.discordbot.utils.command.OperatorContent
+import com.bendev.discordbot.utils.command.PermissionContent
+import com.bendev.discordbot.utils.properties.PropertiesManager
+import net.dv8tion.jda.api.entities.ChannelType
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent
 import net.dv8tion.jda.api.hooks.ListenerAdapter
-import utils.command.CommandMessage
-import utils.command.Commands
-import utils.command.OperatorContent
-import utils.properties.Properties
-import utils.properties.PropertiesManager
-import java.lang.Exception
 
 class MessageListener : ListenerAdapter() {
 

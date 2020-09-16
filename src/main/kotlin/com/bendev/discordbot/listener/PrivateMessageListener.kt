@@ -1,6 +1,5 @@
-package listener
+package com.bendev.discordbot.listener
 
-import net.dv8tion.jda.api.events.message.priv.GenericPrivateMessageEvent
 import net.dv8tion.jda.api.events.message.priv.PrivateMessageReceivedEvent
 import net.dv8tion.jda.api.hooks.ListenerAdapter
 

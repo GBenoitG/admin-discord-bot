@@ -18,7 +18,29 @@ Many features composes this bot:
 
 
 ## Installation
-_Coming soon_
+**Build**
+
+Get sources
+```shell script
+git clone git@github.com:GBenoitG/admin-discord-bot.git  && cd admin-discord-bot/
+```
+
+Build sources
+```shell script
+docker build -t discord-bot .
+```
+
+**Initialization**
+```shell script
+docker run --rm -v $(pwd):/home/gradle/src admin-bot run --args="init"
+```
+Edit the freshly created `properties.json` file ([seen here](#properties)) with your Discord Api Key, then your discord 
+administrator, and what ever you need to edit.
+
+**Run**
+```shell script
+docker run --restart unless-stopped -d -v $(pwd):/home/gradle/src admin-bot run
+```
 
 ## Documentation
 All the details coming soon in the [Wiki](https://github.com/GBenoitG/admin-discord-bot/wiki)

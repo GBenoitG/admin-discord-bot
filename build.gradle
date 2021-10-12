@@ -1,6 +1,6 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.3.72'
-    id 'org.jetbrains.kotlin.plugin.serialization' version '1.3.72'
+    id 'org.jetbrains.kotlin.jvm' version '1.5.31'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.5.31'
     id 'application'
 }
 
@@ -10,21 +10,26 @@ version '1.0-SNAPSHOT'
 mainClassName = "com.bendev.discordbot.BotKt"
 
 repositories {
-    jcenter()
     mavenCentral()
+    maven {
+        name 'm2-dv8tion'
+        url 'https://m2.dv8tion.net/releases'
+    }
 }
 
 dependencies {
 
 //    Kotlin
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31'
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.20.0" // JVM dependency
 
 //    JDA (Java Discord API)
-    implementation "net.dv8tion:JDA:4.1.1_165"
+    implementation("net.dv8tion:JDA:4.3.0_334") {
+        exclude module: 'opus-java'
+    }
 
 //    Test
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
 }
 
 compileKotlin {

@@ -1,7 +1,6 @@
 package com.bendev.discordbot.utils.properties
 
 import kotlinx.serialization.json.Json
-import kotlinx.serialization.json.JsonConfiguration
 import net.dv8tion.jda.api.entities.Guild
 import net.dv8tion.jda.api.entities.User
 import java.io.File
@@ -12,7 +11,10 @@ object PropertiesManager {
     lateinit var properties: Properties
         private set
 
-    private val json: Json by lazy { Json(JsonConfiguration.Stable.copy(prettyPrint = true)) }
+    private val json: Json by lazy { Json {
+        prettyPrint = true
+        encodeDefaults = true
+    } }
 
     @Synchronized
     fun loadPropertiesFromFile(propertiesFilePath: String) {
@@ -22,8 +24,7 @@ object PropertiesManager {
 
         file.inputStream().use {
             val data = it.readBytes().toString(Charsets.UTF_8)
-            val json = Json(JsonConfiguration.Stable)
-            properties = json.parse(Properties.serializer(), data)
+            properties = json.decodeFromString(Properties.serializer(), data)
         }
         filePath = propertiesFilePath
 
@@ -37,7 +38,7 @@ object PropertiesManager {
 
         file.createNewFile()
 
-        val dataToWrite = json.stringify(Properties.serializer(), newProperties)
+        val dataToWrite = json.encodeToString(Properties.serializer(), newProperties)
 
         file.writer(Charsets.UTF_8).use {
             it.write(dataToWrite)
@@ -51,7 +52,7 @@ object PropertiesManager {
     }
 
     private fun initPropertiesFile(file: File) {
-        val dataToWrite = json.stringify(Properties.serializer(), Properties())
+        val dataToWrite = json.encodeToString(Properties.serializer(), Properties())
         file.outputStream().use {
             it.write(dataToWrite.toByteArray(Charsets.UTF_8))
         }

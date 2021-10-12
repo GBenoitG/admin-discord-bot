@@ -21,7 +21,7 @@ dependencies {
 
 //    Kotlin
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31'
-    implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.20.0" // JVM dependency
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.0"
 
 //    JDA (Java Discord API)
     implementation("net.dv8tion:JDA:4.3.0_334") {

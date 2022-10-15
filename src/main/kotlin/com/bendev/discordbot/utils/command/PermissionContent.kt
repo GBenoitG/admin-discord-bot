@@ -3,7 +3,7 @@ package com.bendev.discordbot.utils.command
 class PermissionContent(rawContent: String) : CommandContent(rawContent) {
 
     val description: String
-    val reactions: ArrayList<Pair<String, String>>
+    val reactions: List<Pair<String, String>>
 
     init {
         val description = rawContent.split(":")[0]

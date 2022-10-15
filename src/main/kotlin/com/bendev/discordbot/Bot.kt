@@ -19,7 +19,7 @@ class Bot {
         PropertiesManager.loadPropertiesFromFile(Constant.PROPERTIES_FILE_PATH)
 
         JDABuilder
-                .create(
+                .createDefault(
                         PropertiesManager.properties.token,
                         GatewayIntent.DIRECT_MESSAGES,
                         GatewayIntent.DIRECT_MESSAGE_REACTIONS,

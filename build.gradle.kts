@@ -2,8 +2,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import java.net.URI
 
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "1.5.31"
-    id("org.jetbrains.kotlin.plugin.serialization") version "1.5.31"
+    id("org.jetbrains.kotlin.jvm") version "1.7.20"
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.7.20"
     application
 }
 
@@ -23,16 +23,16 @@ repositories {
 dependencies {
 
 //    Kotlin
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.0")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.20")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0")
 
 //    JDA (Java Discord API)
-    implementation("net.dv8tion:JDA:4.3.0_334") {
+    implementation("net.dv8tion:JDA:4.4.0_352") {
         exclude(module = "opus-java")
     }
 
 //    Test
-    testImplementation(group= "junit", name= "junit", version= "4.12")
+    testImplementation(group= "junit", name= "junit", version= "4.13.2")
 }
 
 tasks.withType<Jar> {

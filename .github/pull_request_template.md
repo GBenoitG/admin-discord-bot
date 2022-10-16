@@ -36,6 +36,6 @@
 <!--- None if no follow-up MR -->
 
 
-## :camera\_with\_flash: Screenshots / GIFs
+## :camera_flash: Screenshots / GIFs
 <!--- Mandatory for UI changes -->
 
